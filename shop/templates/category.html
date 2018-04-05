@@ -1,0 +1,15 @@
+
+{% block category %}
+	<div class="sub-cate">
+				<div class=" top-nav rsidebar span_1_of_left">
+					<h3 class="cate">КАТЕГОРИИ</h3>
+					{% for category in categories %}
+		  <ul class="menu">
+		<li class="item1"><a href="{% url 'shop:post' category.slug %}">{{category}} </a></li>
+	      </ul>
+					{% endfor %}
+				</div>
+	</div>
+	</div>
+
+{% endblock %}

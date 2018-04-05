@@ -1,0 +1,38 @@
+{% extends 'basic.html' %}
+{% load static %}
+
+	{% block content %}
+<div class="grid-product">
+	<h2>{{ name_category }}</h2>
+	{% for book in contacts %}
+	<div class="  product-grid">
+		<div class="content_box"><a href="{% url 'shop:detail' book.id %}">
+			<div class="left-grid-view grid-view-left">
+				<img src="{% static '/'%}{{book.photo}}" class="img-responsive watch-right" alt=""/>
+				    <div class="mask">
+						<div class="info"></div>
+					</div>
+				   	  </a>
+				    <h4><a href="{% url 'shop:detail' book.id %}" class="text-center" >{{book.title}}</a></h4>
+		</div>
+				     <p class="text-primary">Год:  {{book.year}}</p>
+					 <p class="text-left">Цена: {{book.price}}</p>
+	    </div>
+    </div>
+    {% endfor %}
+			<div class="clearfix"> </div>
+
+</div>
+{% include 'pagination.html'%}
+</div>
+{% include 'category.html'%}
+
+
+
+{% endblock %}
+
+
+
+
+
+
