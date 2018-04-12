@@ -1,0 +1,16 @@
+{% extends 'basic.html'%}
+
+{% block content %}
+       	   <div class="account_grid">
+			   <div class=" login-right">
+			  	<h3>Войти</h3>
+                 <form method="post">
+                      {% csrf_token %}
+                      {{ form.as_p }}
+                    <input type="submit" value="login">
+                  </form>
+               </div>
+           </div>
+</div>
+{% include 'category.html' %}
+{% endblock %}

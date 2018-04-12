@@ -1,39 +1,37 @@
-{% extends 'detail.html' %}
+{% extends 'basic.html' %}
 
 {% load static %}
 
-{% block detail %}
-	 	<div class=" single_top">
+{% block content %}
+	 	<div class="grid-product">
 	      <div class="single_grid">
-				<div class="grid images_3_of_2">
-									<img  src="{% static '/'%}{{book.photo}}" class="img-responsive" >
-						 <div class="clearfix"> </div>		
-				  </div> 
-				  <div class="desc1 span_3_of_2">
-					<h4>{{ book}}</h4>
-				<div class="cart-b">
-					<div class="left-n ">Цена:  {{book.price}}</div>
-				    <div class="clearfix"></div>
-				 </div>
-				 <h6>Автор:{{ book.author }}</h6>
-			   	 <h6>Категория: {{book.category}}</h6>
-					  <h6>Год: {{ book.year}}</h6>
-			   	<div class="share">
-						</div>
-				</div>
-          	    <div class="clearfix"> </div>
-          	   </div>
-          	    	<div class="toogle">
-				     	<h3 class="m_3">Описание книги</h3>
-				     	<p class="m_text">{{book.describe}}</p>
-				     </div>
+					<div class="grid images_3_of_2">
+						<img  src="{% static '/'%}{{book.photo}}" class="img-responsive" >
+							 <div class="clearfix"> </div>
+					</div>
+						  <div class="desc1 span_3_of_2">
+                          <div class="left-n "></div>
+							  <h3><strong>{{ book }}</strong></h3>
+			                  <h6><strong>Цена:</strong>{{book.price}}</h6>
+							  <h6><strong>Автор:</strong> {{ book.author }}</h6>
+							  <h6><strong>Категория:</strong> {{book.category}}</h6>
+								  <h6><strong>Год:</strong> {{ book.year}}</h6>
+
+						  </div>
+			   	      <div class="share"></div>
+		  </div>
+          	          <div class="clearfix"> </div>
+		</div>
+							<div class="toogle">
+								<h3 class="m_3">Описание книги</h3>
+								<p class="m_text">{{book.describe}}</p>
+							 </div>
 
 		</div>
 
 
 
 {% include 'category.html'%}
-{% include 'pagination.html'%}
 
 {% endblock %}
 

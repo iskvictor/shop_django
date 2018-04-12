@@ -1,0 +1,31 @@
+{% extends 'basic.html'%}
+{% block content %}
+<div class="register">
+  <form method="post">
+	  <div class="  register-top-grid">
+		  <h2>Регистрация</h2>
+
+    {% csrf_token %}
+    {% for field in form %}
+      <p>
+        {{ field.label_tag }}<br>
+		  {{ field }}
+        {% if field.help_text %}
+          <small style="color: grey"></small>
+        {% endif %}
+        {% for error in field.errors %}
+          <p style="color: red">{{ error }}</p>
+        {% endfor %}
+      </p>
+    {% endfor %}
+          <input type="submit" value="login">
+
+	  </div>
+</form>
+
+</div>
+</div>
+
+{% include 'category.html'%}
+
+{% endblock %}

@@ -25,31 +25,15 @@
 				<div class="top-header-left">
 					<ul class="support">
 						<li><a href="#"><label> </label></a></li>
-						<li><a href="#">24x7 live<span class="live"> support</span></a></li>
+						<li><a href="#">24x7 <span class="live"> Поддержка</span></a></li>
 					</ul>
 					<ul class="support">
 						<li class="van"><a href="#"><label> </label></a></li>
-						<li><a href="#">Free shipping <span class="live">on order over 500</span></a></li>
+						<li><a href="#">Доставка по Украине БЕСПЛАТНО <span class="live"></span></a></li>
 					</ul>
 					<div class="clearfix"> </div>
 				</div>
 				<div class="top-header-right">
-					<div class="down-top">
-						  <select class="in-drop">
-							  <option value="English" class="in-of">English</option>
-							  <option value="Japanese" class="in-of">Japanese</option>
-							  <option value="French" class="in-of">French</option>
-							  <option value="German" class="in-of">German</option>
-							</select>
-					 </div>
-					<div class="down-top top-down">
-						  <select class="in-drop">
-
-						  <option value="Dollar" class="in-of">Dollar</option>
-						  <option value="Yen" class="in-of">Yen</option>
-						  <option value="Euro" class="in-of">Euro</option>
-							</select>
-					 </div>
 					<div class="clearfix"> </div>
 				</div>
 				<div class="clearfix"> </div>
@@ -59,23 +43,26 @@
 			<div class="container">
 				<div class="header-bottom-left">
 					<div class="logo">
-						<a href="index.html"><img src="images/logo.png" alt=" " /></a>
+						<a href="index.html"><img src="{% static 'images/logo.png'%}" alt=" " /></a>
 					</div>
-					<div class="search">
-						<input type="text" value="" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = '';}" >
-						<input type="submit"  value="SEARCH">
+                   <div class="search">
 
-					</div>
+						<form type="get" action="{% url 'shop:search' %}">
+                           <input type="search" id="q" name="q" placeholder="Search..."/>
+                        </form>
+				</div>
+
 					<div class="clearfix"> </div>
 				</div>
 				<div class="header-bottom-right">
-						<div class="account"><a href="login.html"><span> </span>YOUR ACCOUNT</a></div>
 							<ul class="login">
-								<li><a href="login.html"><span> </span>LOGIN</a></li> |
-								<li ><a href="register.html">SIGNUP</a></li>
+								 {% if user.is_authenticated %}
+										<li><a href="{% url 'shop:logout' %}"><span> </span>Привет, {{ user.username  }}!(выйти)</a> |</li>
+									{% else %}
+										<li><a href="{% url 'shop:login' %}"><span> </span>Войти</a>|</li>
+								{% endif %}
+								<li ><a href="{% url 'shop:register'%}"><span> </span>РЕГИСТРАЦИЯ</a></li>
 							</ul>
-						<div class="cart"><a href="#"><span> </span>CART</a></div>
-					<div class="clearfix"> </div>
 				</div>
 				<div class="clearfix"> </div>
 			</div>
@@ -87,55 +74,26 @@
 
 	<div class="women-product">
 		<div class=" w_content">
-			<div class="women">
-				<a href="#"><h4>Enthecwear - <span>4449 itemms</span> </h4></a>
-				<ul class="w_nav">
-					<li>Sort : </li>
-			     	<li><a class="active" href="#">popular</a></li> |
-			     	<li><a href="#">new </a></li> |
-			     	<li><a href="#">discount</a></li> |
-			     	<li><a href="#">price: Low High </a></li>
-			     <div class="clearfix"> </div>
-			     </ul>
-			     <div class="clearfix"> </div>
-			</div>
+
 		</div>
 		<!-- grids_of_4 -->
 
-		{% block content %}
-{% endblock %}
+		{% block content %}{% endblock %}
+
 	</div>
 
 						<!--initiate accordion-->
 
-					<div class=" chain-grid menu-chain">
-	   		     		<a href="single.html"><img class="img-responsive chain" src="images/wat.jpg" alt=" " /></a>
-	   		     		<div class="grid-chain-bottom chain-watch">
-		   		     		<span class="actual dolor-left-grid">300$</span>
-		   		     		<span class="reducedfrom">500$</span>
-		   		     		<h6>Lorem ipsum dolor</h6>
-	   		     		</div>
-	   		     	</div>
-	   		     	 <a class="view-all all-product" href="product.html">VIEW ALL PRODUCTS<span> </span></a>
-			</div>
+
+
 	<div class="clearfix"> </div>
 </div>
 	<!---->
 	<div class="footer">
 		<div class="footer-top">
 			<div class="container">
-				<div class="latter">
-					<h6>NEWS-LETTER</h6>
-					<div class="sub-left-right">
-						<form>
-							<input type="text" value="Enter email here"onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Enter email here';}" />
-							<input type="submit" value="SUBSCRIBE" />
-						</form>
-					</div>
-					<div class="clearfix"> </div>
-				</div>
 				<div class="latter-right">
-					<p>FOLLOW US</p>
+					<p></p>
 					<ul class="face-in-to">
 						<li><a href="#"><span> </span></a></li>
 						<li><a href="#"><span class="facebook-in"> </span></a></li>
@@ -149,63 +107,22 @@
 		<div class="footer-bottom">
 			<div class="container">
 				<div class="footer-bottom-cate">
-					<h6>CATEGORIES</h6>
-					<ul>
-						<li><a href="#">Curabitur sapien</a></li>
-						<li><a href="#">Dignissim purus</a></li>
-						<li><a href="#">Tempus pretium</a></li>
-						<li ><a href="#">Dignissim neque</a></li>
-						<li ><a href="#">Ornared id aliquet</a></li>
-						<li><a href="#">Ultrices id du</a></li>
-						<li><a href="#">Commodo sit</a></li>
-						<li ><a href="#">Urna ac tortor sc</a></li>
-						<li><a href="#">Ornared id aliquet</a></li>
-						<li><a href="#">Urna ac tortor sc</a></li>
-						<li ><a href="#">Eget nisi laoreet</a></li>
-						<li ><a href="#">Faciisis ornare</a></li>
-					</ul>
+					<h6>Доставка</h6>
+					<p>Доставим Ваш заказ в любой город Украины.
+						Способы доставки: курьером, Нова Пошта, Автолюкс, Интайм, Укрпочта, самовывоз из офиса.
+						Все заказы пакуются супернадежно и застрахованы</p>
+
 				</div>
 				<div class="footer-bottom-cate bottom-grid-cat">
-					<h6>FEATURE PROJECTS</h6>
-					<ul>
-						<li><a href="#">Curabitur sapien</a></li>
-						<li><a href="#">Dignissim purus</a></li>
-						<li><a href="#">Tempus pretium</a></li>
-						<li ><a href="#">Dignissim neque</a></li>
-						<li ><a href="#">Ornared id aliquet</a></li>
-						<li><a href="#">Ultrices id du</a></li>
-						<li><a href="#">Commodo sit</a></li>
-					</ul>
+					<h6> ОПЛАТА </h6>
+					<p>Оплата заказа любым удобным для Вас способом</p>
 				</div>
 				<div class="footer-bottom-cate">
-					<h6>TOP BRANDS</h6>
-					<ul>
-						<li><a href="#">Curabitur sapien</a></li>
-						<li><a href="#">Dignissim purus</a></li>
-						<li><a href="#">Tempus pretium</a></li>
-						<li ><a href="#">Dignissim neque</a></li>
-						<li ><a href="#">Ornared id aliquet</a></li>
-						<li><a href="#">Ultrices id du</a></li>
-						<li><a href="#">Commodo sit</a></li>
-						<li ><a href="#">Urna ac tortor sc</a></li>
-						<li><a href="#">Ornared id aliquet</a></li>
-						<li><a href="#">Urna ac tortor sc</a></li>
-						<li ><a href="#">Eget nisi laoreet</a></li>
-						<li ><a href="#">Faciisis ornare</a></li>
-					</ul>
+					<h6>О НАС</h6>
+					<p>BOOKSHOP –  интернет-магазин который создан с целью получения практического опыта
+					разработки на Django</p>
 				</div>
-				<div class="footer-bottom-cate cate-bottom">
-					<h6>OUR ADDERSS</h6>
-					<ul>
-						<li>Aliquam metus  dui. </li>
-						<li>orci, ornareidquet</li>
-						<li> ut,DUI.</li>
-						<li >nisi, dignissim</li>
-						<li >gravida at.</li>
-						<li class="phone">PH : 6985792466</li>
-						<li class="temp"> <p class="footer-class">Design by <a href="http://w3layouts.com/" target="_blank">W3layouts</a> </p></li>
-					</ul>
-				</div>
+
 				<div class="clearfix"> </div>
 			</div>
 		</div>

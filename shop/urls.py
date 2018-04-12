@@ -14,7 +14,9 @@ Including another URLconf
     2. Add a URL to urlpatterns:  url(r'^blog/', include('blog.urls'))
 """
 from django.conf.urls import url
+from django.contrib.auth.views import LoginView
 from . import views
+
 
 app_name ="shop"
 
@@ -22,6 +24,10 @@ urlpatterns = [
     url(r'^$', views.ShopBookList.as_view(), name='index'),
     url(r'^category/(?P<slug>[\w-]+)$', views.BookList.as_view(), name='post'),
     url(r'^book/(?P<pk>\d+)$', views.BookDetail.as_view(), name='detail'),
-
+    url(r'^auth/register/$', views.UserFormView.as_view(), name='register'),
+    url(r'^login/$', views.LoginFormView.as_view(), name='login'),
+    url(r'^logout/$', views.LogoutView.as_view(), name='logout'),
+    url(r'^search/?$', views.ProfileSearchView.as_view(), name='search'),
+    url(r'^', views.ShopBookList.as_view(), name='index'),
 
 ]

@@ -16,7 +16,7 @@ body a{
 	-moz-transition: 0.5s all;
 }
 .top-header{
-	background: #F97E76;
+	background: #E89E9B;
 	padding: 0.7em 0;
 }
 .top-header-left{
@@ -103,8 +103,8 @@ ul.support li a {
 	vertical-align: middle;
 }
 ul.login{
-	float:left;
-	width:36%;
+	float:right;
+	/* width:36%;*/
 	margin:0;
 }
 ul.login li{
@@ -125,7 +125,7 @@ ul.login li a span{
 	background:#fff;
 	border: 1px solid #ddd;
 	position: relative;
-	width: 47%;
+	/* width: 47%;*/
 	float: right;
 	margin: 1.2em 0 0;
 }
@@ -892,9 +892,9 @@ a.forgot {
 	padding: 1em 4em 2em;
 }
 /*--register--*/
-.register-top-grid h3, .register-bottom-grid h3 {
+.register-top-grid h2, .register-bottom-grid h2 {
 	color:#F97E76;
-	font-size: 1.1em;
+	font-size: 25px;
 	padding-bottom: 5px;
 	margin: 0;
 	font-weight:600;
@@ -907,7 +907,7 @@ a.forgot {
 	text-transform: uppercase;
 }
 .register-top-grid input[type="text"], .register-bottom-grid input[type="text"] {
-	border: 1px solid #EEE;
+
 	outline-color:#FF5B36;
 	width: 85%;
 	font-size: 1em;
@@ -1083,7 +1083,7 @@ ul.face-in-to li a span.facebook-in{
 }
 .footer-bottom-cate{
 	float: left;
-	width: 25%;
+	width: 33%;
 }
 .footer-bottom-cate h6{
 	font-size: 1.1em;
@@ -1187,6 +1187,7 @@ ul.face-in-to li a span.facebook-in{
 	font-size:1.8em;
 	float:left;
 	color:#F97E76;
+	margin-bottom:20px;
 }
 .span_3_of_2 p {
 	font-size: 1em;

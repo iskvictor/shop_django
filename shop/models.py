@@ -4,11 +4,10 @@ from django.urls import reverse
 # Create your models here.
 
 class Book(models.Model):
-    title = models.CharField(max_length=50)
+    title = models.CharField(max_length=52)
     describe = models.TextField()
     author = models.ForeignKey('Author', on_delete=models.SET_NULL, null=True)
     category = models.ForeignKey('Category', on_delete=models.SET_NULL, null=True)
-
     year = models.IntegerField()
     photo = models.ImageField(upload_to='images')
     price = models.IntegerField(null=True)
@@ -34,7 +33,7 @@ class Category(models.Model):
 
 
 
-    def get_absolute_url(self):
-        return reverse('post', kwargs={'slug': self.slug, 'id': self.id})
+    #def get_absolute_url(self):
+        #return reverse('post', kwargs={'slug': self.slug, 'id': self.id})
 
 
